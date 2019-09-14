@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<meta charset="UTF-8">
+<title>Equipments</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="UTF-8" />
+<meta name="google" value="notranslate" />
+<meta http-equiv="Content-Language" content="en_US" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel='stylesheet'
+	href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'>
+<link rel='stylesheet'
+	href='https://res.cloudinary.com/ratzydev/raw/upload/v1527318671/webdevchallenge1/reset.min.css'>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700'
+	rel='stylesheet' type='text/css'>
+
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+<title>Index Page</title>
+</head>
+<body>
+
+
+	<header>
+		<a href="/" class="logo"><img
+			src="https://res.cloudinary.com/ratzydev/image/upload/v1528004141/webdevchallenge2/logo.png"
+			alt="Smart SEO" class="full-width-img" /></a>
+
+		<nav>
+
+
+			<li class="nav-item" sec:authorize="!isAuthenticated()"><a
+				class="nav-link" href="/register">Cadastro</a></li>
+			<li class="nav-item" sec:authorize="!isAuthenticated()"><a
+				class="nav-link" href="/login">Login</a></li>
+			<li class="nav-item" sec:authorize="isAuthenticated()"><a
+				class="nav-link" href="/profile">Perfil</a></li>
+			<li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')"><a
+				class="nav-link" href="/users">Clientes</a></li>
+			<li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')"><a
+				class="nav-link" href="/lista">Empresas</a></li>
+
+			<li class="nav-item"><a class="nav-link" href="/about">Sobre</a>
+			</li>
+			<li class="nav-item" sec:authorize="isAuthenticated()"><a
+				class="nav-link" href="/logout">Logout</a></li>
+
+
+
+			<div class="hamburger-menu">
+				<span class="line"></span> <span class="line"></span> <span
+					class="line"></span>
+			</div>
+		</nav>
+	</header>
+	<div class="hero-wrapper">
+		<img
+			src="https://res.cloudinary.com/ratzydev/image/upload/v1528004141/webdevchallenge2/hero.jpg"
+			alt="Hero Image" class="resp-hide" /> <img
+			src="https://res.cloudinary.com/ratzydev/image/upload/v1528004141/webdevchallenge2/hero-resp.jpg"
+			alt="Hero Image" class="resp-show" />
+		<div class="hero-text-wrapper">
+			<h1>Equipamentos</h1>
+			<p>Especializados em Laudos e Medições Técnicas.</p>
+		</div>
+	</div>
+	<div class="hero-strip-wrapper">
+		<h3>Seus Equipamentos Aferidos por Especialistas.</h3>
+		<button type="button" class="btn">Get Your Results</button>
+	</div>
+	
+	<h5>
+		<th:block th:include="mensagemValidacao"></th:block>
+	</h5>
+	
+	<div class="container-lista">
+
+		<div class="row">
+			<div class="input-field col s5 ">
+				<p>
+					Nome: <span th:text="${cadastro.nome_empresa}"></span>
+				</p>
+				<p>
+					Razao Social: <span th:text="${cadastro.razao_empresa}"></span>
+				</p>
+				<p>
+					E-mail: <span th:text="${cadastro.email_empresa}"></span>
+				</p>
+				<p>
+					Telefone: <span th:text="${cadastro.telefone}"></span>
+				</p>
+				<p>
+					Area Medica: <span th:text="${cadastro.area_medica}"></span>
+				</p>
+				<p>
+					CNPJ: <span th:text="${cadastro.cnpj}"></span>
+				</p>
+				<p>
+					Numero: <span th:text="${cadastro.numero_end}"></span>
+				</p>
+				<p>
+					Rua: <span th:text="${cadastro.rua_end}"></span>
+				</p>
+				<p>
+					Bairro: <span th:text="${cadastro.bairro_end}"></span>
+				</p>
+				<p>
+					Cidade: <span th:text="${cadastro.cidade_end}"></span>
+				</p>
+				<p>
+					CEP: <span th:text="${cadastro.cep}"></span>
+				</p>
+			</div>
+
+
+
+
+
+			<form method="post" class="jumbotron">
+
+				<div class="form-group">
+					<div class="row">
+						<div class="input-field col s2 ">
+							Numero de S&#233;rie:<input type="text" class="form-control"
+								value="" name="numero_serie" placeholder="Numero de Serie"
+								size="25"/>
+						</div>
+						<div class="input-field col s4 ">
+							Marca:<input type="text" value="" class="form-control"
+								name="marca" placeholder="Marca" size="25" />
+							
+						</div>
+						<div class="input-field col s4">
+							Tensão:<select class="custom-select mr-sm-2"	id="tensaoOperacao" name="tensaoOperacao"  >
+							<option>Selecione</option>
+							<option>110V</option>
+                            <option>220V</option>
+							
+							</select>
+						</div>
+						<div class="input-field col s4 ">
+							Tensão Maxima(kVp):<input type="text" value="" class="form-control"
+								name="tensaoMaxima" placeholder="Tensão Maxima" size="25" />
+							
+						</div>
+						<div class="input-field col s4 ">
+							Modelo:<input type="text" value="" class="form-control"
+								name="modelo" placeholder="Modelo" size="25" />
+						</div>
+						<div class="input-field col s4 ">
+							Data de Cadastro:<input type="date" class="form-control" value=""
+								name="dataInserircao" size="25" />
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						
+						
+						<div class="input-field col s4 ">
+							mA maximo:<input type="text" class="form-control" value=""
+								name="mA maximo" size="25" />
+						</div>
+						<div class="input-field col s4 ">
+							Tempo Maximo(s):<input type="text" class="form-control" value=""
+								name="tempo Maximo" size="25" />
+						</div>
+							<div class="input-field col s4 ">
+							Tempo Utilizado:<input type="text" value="" class="form-control"
+								name="tempoUtilizado" placeholder="tempo Utilizado" size="25" />
+						</div>
+						<div class="input-field col s4 ">
+							Distacia Foco(cm):<input type="text" class="form-control" value=""
+								name="distaciaFoco" placeholder="Distacia Foco"  size="25" />
+						</div>
+						<div class="input-field col s4 ">
+							Forma de Onda:<input type="text" class="form-control" value=""
+								name="formaOnda" placeholder="Forma de Onda"  size="25" />
+						</div>
+						<div class="input-field col s4 ">
+							Contador de Tempo:<input type="text" class="form-control" value=""
+								name="contadorTempo"  placeholder="Contador de Tempo"size="25" />
+						</div>
+						<!--  >div><a th:href="@{/editarequipamento/{idequip}(idequip=${equipamento.numero_serie})}">Editar</a></div-->
+					</div>
+					<br>
+					<div class="row">
+					
+						
+						<div class="form-group col-md-2">
+							QTD Radiografias(sem):<input type="number" value="" class="form-control"
+								name="qtdRadiografias" placeholder="QTD Radiografias" size="25" />
+						</div>
+						<div class="form-group col-md-2">
+							Correção de Tensão:<select class="custom-select mr-sm-2"	id="correcaoTensao" name="correcaoTensao"  >
+							<option>Selecione</option>
+							<option>Sim</option>
+                            <option>Não</option>
+							
+							</select>
+						</div>
+						<div class="form-group col-md-2">
+							Disparador Automático:<select class="custom-select mr-sm-2"	id="disparadorAuto" name="disparadorAuto"  >
+							<option>Selecione</option>
+							<option>Sim</option>
+                            <option>Não</option>
+							
+							</select>
+						</div>
+						<div class="form-group col-md-2">
+							Cabo Disparador:<select class="custom-select mr-sm-2"	id="caboDisparador" name="caboDisparador"  >
+							<option>Selecione</option>
+							<option>Sim</option>
+                            <option>Não</option>
+							
+							</select>
+						</div>
+						
+					</div>
+					<br>
+					<div class="row">
+					<h6>Cone Localizador:</h6>
+						<div class="form-group mx-sm-3 mb-2 ">
+							Comprimento(cm):<input type="text" value="" class="form-control"
+								name="coneComprimento" placeholder="Comprimento do Cone" size="25" />
+						</div>
+						<div class="form-group mx-sm-3 mb-2 ">
+							Diametro Interno(cm):<input type="text" class="form-control" value=""
+								name="coneDiametro" placeholder="Diametro Interno"  size="25" />
+						</div>
+						<div class="form-group mx-sm-3 mb-2 ">
+							Extremidade do Cone(cm):<input type="text" class="form-control" value=""
+								name="coneExtremidade" placeholder="Extremidade do Cone"  size="25" />
+						</div>
+					
+					</div>
+
+				</div>
+				<br>
+				<button class="waves-effect waves-light btn" type="submit">Adicionar
+					Equipamento</button>
+			</form>
+		</div>
+	</div>
+	<p>
+	<h5 Align="center"><strong>Equipamentos Cadastrados</strong></h5>
+
+	<div class="container" style="width: 700px;">
+		<table class="table table-hover">
+
+
+			<thead>
+				<tr>
+					<th>Numero de Serie</th>
+					<th>Marca</th>
+					<th>Modelo</th>
+					<th>Data de Cadastro</th>
+					<th>Voltagem</th>
+					<th>Radiação</th>
+
+
+				</tr>
+
+			</thead>
+
+			<tbody>
+				<tr th:each="equipamento : ${equipamentos}">
+
+					<td th:text="${equipamento.numero_serie}"></td>
+
+					<td th:text="${equipamento.marca}"></td>
+
+					<td th:text="${equipamento.modelo}"></td>
+
+					<td th:text="${equipamento.dataInserircao}"></td>
+					
+					<td th:text="${equipamento.voltagem}"></td>
+
+					<td th:text="${equipamento.radiacao}"></td>
+			</tbody>
+		</table>
+	</div>
+
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+<footer>
+	<p class="text text-center">&copy; 2019 Projeto FEMKHRA</p>
+
+</footer>
+
+</html>
