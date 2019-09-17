@@ -243,6 +243,7 @@ transition: 0.3s all cubic-bezier(1.195, 1.785, 1.50, 3.500);
 .cadastro-form {
 		width: 700px;
     	margin: 10px auto;
+    	
 	}
     .cadastro-form form {
     	margin-bottom: 10px;
@@ -276,6 +277,8 @@ REg FORM
     margin-left: -15%;
     position: absolute;
     margin-top: -15%;
+    animation-name:fade;
+    animation-duration:1s;
 	}
     .register-form form {
     	margin-bottom: 15px;
@@ -295,6 +298,19 @@ REg FORM
         font-weight: bold;
     }
 
+
+@keyframes fade{
+	from {
+	
+	opacity:0;
+	
+	}to{
+	
+	opacity:1;
+	
+	}
+}
+
 /**********************
 LOGIN FORM
 ***********************/
@@ -306,6 +322,8 @@ LOGIN FORM
     margin-left: -15%;
     position: absolute;
     margin-top: -15%;
+    animation-name:fade;
+    animation-duration:1s;
 	}
     .login-form form {
     	margin-bottom: 15px;

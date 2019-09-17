@@ -138,15 +138,15 @@
 						<div class="input-field col s2 ">
 							Numero de S&#233;rie:<input type="text" class="form-control"
 								value="" name="numero_serie" placeholder="Numero de Serie"
-								size="25"/>
+								size="25" required/>
 						</div>
 						<div class="input-field col s4 ">
 							Marca:<input type="text" value="" class="form-control"
-								name="marca" placeholder="Marca" size="25" />
+								name="marca" placeholder="Marca" size="25" required/>
 							
 						</div>
 						<div class="input-field col s4">
-							Tensão:<select class="custom-select mr-sm-2"	id="tensaoOperacao" name="tensaoOperacao"  >
+							Tensão:<select class="custom-select mr-sm-2" 	id="tensaoOperacao" name="tensaoOperacao"  >
 							<option>Selecione</option>
 							<option>110V</option>
                             <option>220V</option>
@@ -155,16 +155,16 @@
 						</div>
 						<div class="input-field col s4 ">
 							Tensão Maxima(kVp):<input type="text" value="" class="form-control"
-								name="tensaoMaxima" placeholder="Tensão Maxima" size="25" />
+								name="tensaoMaxima" placeholder="Tensão Maxima" size="25" required/>
 							
 						</div>
 						<div class="input-field col s4 ">
 							Modelo:<input type="text" value="" class="form-control"
-								name="modelo" placeholder="Modelo" size="25" />
+								name="modelo" placeholder="Modelo" size="25" required/>
 						</div>
 						<div class="input-field col s4 ">
 							Data de Cadastro:<input type="date" class="form-control" value=""
-								name="dataInserircao" size="25" />
+								name="dataInserircao" size="25" required/>
 						</div>
 					</div>
 					<br>
@@ -173,27 +173,27 @@
 						
 						<div class="input-field col s4 ">
 							mA maximo:<input type="text" class="form-control" value=""
-								name="mA maximo" size="25" />
+								name="mA maximo" size="25" required/>
 						</div>
 						<div class="input-field col s4 ">
 							Tempo Maximo(s):<input type="text" class="form-control" value=""
-								name="tempo Maximo" size="25" />
+								name="tempo Maximo" size="25" required/>
 						</div>
 							<div class="input-field col s4 ">
 							Tempo Utilizado:<input type="text" value="" class="form-control"
-								name="tempoUtilizado" placeholder="tempo Utilizado" size="25" />
+								name="tempoUtilizado" placeholder="tempo Utilizado" size="25" required/>
 						</div>
 						<div class="input-field col s4 ">
 							Distacia Foco(cm):<input type="text" class="form-control" value=""
-								name="distaciaFoco" placeholder="Distacia Foco"  size="25" />
+								name="distaciaFoco" placeholder="Distacia Foco"  size="25" required />
 						</div>
 						<div class="input-field col s4 ">
 							Forma de Onda:<input type="text" class="form-control" value=""
-								name="formaOnda" placeholder="Forma de Onda"  size="25" />
+								name="formaOnda" placeholder="Forma de Onda"  size="25" required/>
 						</div>
 						<div class="input-field col s4 ">
 							Contador de Tempo:<input type="text" class="form-control" value=""
-								name="contadorTempo"  placeholder="Contador de Tempo"size="25" />
+								name="contadorTempo"  placeholder="Contador de Tempo"size="25" required/>
 						</div>
 						<!--  >div><a th:href="@{/editarequipamento/{idequip}(idequip=${equipamento.numero_serie})}">Editar</a></div-->
 					</div>
@@ -203,10 +203,10 @@
 						
 						<div class="form-group col-md-2">
 							QTD Radiografias(sem):<input type="number" value="" class="form-control"
-								name="qtdRadiografias" placeholder="QTD Radiografias" size="25" />
+								name="qtdRadiografias" placeholder="QTD Radiografias" size="5" required/>
 						</div>
 						<div class="form-group col-md-2">
-							Correção de Tensão:<select class="custom-select mr-sm-2"	id="correcaoTensao" name="correcaoTensao"  >
+							Correção de Tensão:<select class="custom-select mr-sm-2" 	id="correcaoTensao" name="correcaoTensao" required >
 							<option>Selecione</option>
 							<option>Sim</option>
                             <option>Não</option>
@@ -214,7 +214,7 @@
 							</select>
 						</div>
 						<div class="form-group col-md-2">
-							Disparador Automático:<select class="custom-select mr-sm-2"	id="disparadorAuto" name="disparadorAuto"  >
+							Disparador Automático:<select class="custom-select mr-sm-2"	  id="disparadorAuto" name="disparadorAuto"  >
 							<option>Selecione</option>
 							<option>Sim</option>
                             <option>Não</option>
@@ -222,7 +222,7 @@
 							</select>
 						</div>
 						<div class="form-group col-md-2">
-							Cabo Disparador:<select class="custom-select mr-sm-2"	id="caboDisparador" name="caboDisparador"  >
+							Cabo Disparador:<select class="custom-select mr-sm-2"	 id="caboDisparador" name="caboDisparador"  >
 							<option>Selecione</option>
 							<option>Sim</option>
                             <option>Não</option>
@@ -236,15 +236,15 @@
 					<h6>Cone Localizador:</h6>
 						<div class="form-group mx-sm-3 mb-2 ">
 							Comprimento(cm):<input type="text" value="" class="form-control"
-								name="coneComprimento" placeholder="Comprimento do Cone" size="25" />
+								name="coneComprimento" placeholder="Comprimento do Cone" size="25" required/>
 						</div>
 						<div class="form-group mx-sm-3 mb-2 ">
 							Diametro Interno(cm):<input type="text" class="form-control" value=""
-								name="coneDiametro" placeholder="Diametro Interno"  size="25" />
+								name="coneDiametro" placeholder="Diametro Interno"  size="25" required/>
 						</div>
 						<div class="form-group mx-sm-3 mb-2 ">
 							Extremidade do Cone(cm):<input type="text" class="form-control" value=""
-								name="coneExtremidade" placeholder="Extremidade do Cone"  size="25" />
+								name="coneExtremidade" placeholder="Extremidade do Cone"  size="25" required/>
 						</div>
 					
 					</div>
