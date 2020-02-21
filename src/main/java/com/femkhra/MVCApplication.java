@@ -21,8 +21,8 @@ public class MVCApplication  implements  CommandLineRunner{
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		  {
-//    		  Usuario newAdmin = new Usuario("admin@adm.com", "Admin", "123456");
-//    		  usuarioService.createAdmin(newAdmin); 
+ //  		  Usuario newAdmin = new Usuario("admin@adm.com", "Admin", "121234");
+  // 		  usuarioService.createAdmin(newAdmin); 
     	  }
 	}  
 }

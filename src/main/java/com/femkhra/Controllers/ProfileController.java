@@ -1,7 +1,15 @@
 package com.femkhra.Controllers;
 
 import java.security.Principal;
-import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.femkhra.Models.Cadastro;
 import com.femkhra.Models.Equipamento;
@@ -10,15 +18,6 @@ import com.femkhra.Repositories.EmpresaRepository;
 import com.femkhra.Repositories.EquipamentoRepository;
 import com.femkhra.Services.TaskService;
 import com.femkhra.Services.UsuarioService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ProfileController {
@@ -27,8 +26,12 @@ public class ProfileController {
 	private TaskService taskService;
 	@Autowired
 	private UsuarioService usuarioService;
-	
-	
+//	@Autowired
+//	private EmpresaRepository er;
+//
+//	@Autowired
+//	private EquipamentoRepository eR;
+//	
 
 	
 	
@@ -41,6 +44,20 @@ public class ProfileController {
 		return "views/profile";
 		
 	}
+	
+//	@GetMapping("/detalhes")
+//	
+//	public ModelAndView detalhesEquip(@PathVariable("codigo") long codigo) {
+//		Cadastro cadastro = er.findByCodigo(codigo);
+//		ModelAndView mv = new ModelAndView("views/profile");
+//		mv.addObject("cadastro", cadastro);
+//		Iterable<Equipamento> equipamentos = eR.findByCadastro(cadastro);
+//		mv.addObject("equipamentos", equipamentos);
+//		return mv;
+//
+//	}
+
+	
 //	@RequestMapping("/profile")
 //	public String showProfilePage(Model model, Principal principal) {
 //		

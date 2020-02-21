@@ -39,13 +39,14 @@ function mascara(i,t){
 		      i.setAttribute("maxlength", "9");
 		      if (v.length == 5) i.value += "-";
 		   }
+	   
 	   if(t == "telefone"){
-		      if(v[0] == 11){
+		      if(v[3] == 9){
+		         i.setAttribute("maxlength", "12");
+		         if (v.length == 7) i.value += "-";
+		      }else{
 		         i.setAttribute("maxlength", "11");
 		         if (v.length == 6) i.value += "-";
-		      }else{
-		         i.setAttribute("maxlength", "10");
-		         if (v.length == 5) i.value += "-";
 		      }
 		   }
 		}

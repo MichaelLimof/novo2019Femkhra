@@ -1,19 +1,20 @@
 
 table{
-	
+	margin-top:20px;
 	max-width: 100%;
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
-    font-family: arial;
+    font-family: sans-serif;
     text-align:center; 
+    
    
   }
 .table {
-    border-bottom: #999999 solid 1px;
+    border-bottom: #000000 solid 1px;
     width: 100%;
     margin-bottom: 20px;
-    
+    border-radius:5px;
     margin-left:auto; 
     margin-right:auto;
   
@@ -21,6 +22,7 @@ table{
   .table th,
   .table td {
     border-right: #999999 solid 1px;
+     border-left: #999999 solid 1px;
     font-size: 12px;
     padding: 8px;
     line-height: 20px;
@@ -29,7 +31,7 @@ table{
   }
 
   .table td:last-child {
-     border-right: 0;
+     border-right: #999999 solid 1px;
   }
 
   .table thead th {
@@ -37,6 +39,7 @@ table{
     background-color: #f7f7f7;
     color: #000000;
     font-size: 15px;
+  
   }
 
   .table tbody > tr:nth-child(odd) > td,
@@ -90,8 +93,9 @@ table{
 
 
 }
+/*************************************************/
 
- 
+
 
 /***********************************************/
 
@@ -102,7 +106,7 @@ padding-top: 100px;
 padding-bottom:0px;
 background-image:url('images/car/car.jpg');
 background-size: cover;
-height:500px;
+height:400px;
 
  width: 100%;
 

@@ -3,18 +3,24 @@ package com.femkhra.Services;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.femkhra.Models.Role;
-import com.femkhra.Models.Usuario;
-import com.femkhra.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.femkhra.Models.Equipamento;
+import com.femkhra.Models.Role;
+import com.femkhra.Models.Usuario;
+import com.femkhra.Repositories.EquipamentoRepository;
+import com.femkhra.Repositories.UserRepository;
 
 @Service
 public class UsuarioService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private EquipamentoRepository equipamentoRepository;
 	
 	public void createUser(Usuario usuario) {
 		BCryptPasswordEncoder  encoder = new  BCryptPasswordEncoder();
@@ -40,6 +46,11 @@ public class UsuarioService {
 		
 	  return userRepository.findOne(email);
 	}
+	
+	public Equipamento findEquip(String numero_serie) {
+		
+		  return equipamentoRepository.findOne(numero_serie);
+		}
 
 	public boolean isUserPresent(String email) {
 		// TODO Auto-generated method stub

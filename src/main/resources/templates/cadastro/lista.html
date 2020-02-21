@@ -105,23 +105,23 @@
 <div class="container">
 <div class="panel-heading"><h3 class="panel-title"><strong>Lista de Parceiros </strong></h3> </div>
   
- <table class=" table table-responsive">
+ <table class=" table table-striped">
 <thead>
 <tr>
-<th>Adicionar Equipamento</th>
-<th>Nome</th>
-<th>Raz&#227;o Social</th>
-<th>E-mail</th>
-<th>Telefone</th>
-<th>&#193;rea M&#233;dica</th>
-<th>CNPJ</th>
-<th>N&#186;</th>
-<th>Rua</th>
-<th>Bairro</th>
-<th>Cidade</th>
-<th>CEP</th>
-<th>Editar</th>
-<th>Deletar</th>
+<th scope="col">Adicionar Equipamento</th>
+<th scope="col">Nome</th>
+<th scope="col">Raz&#227;o Social</th>
+<th scope="col">E-mail</th>
+<th scope="col">Telefone</th>
+<th scope="col">&#193;rea M&#233;dica</th>
+<th scope="col">CNPJ</th>
+<th scope="col">N&#186;</th>
+<th scope="col">Rua</th>
+<th scope="col">Bairro</th>
+<th scope="col">Cidade</th>
+<th scope="col">CEP</th>
+<th scope="col">Editar</th>
+<th scope="col">Deletar</th>
 </tr>
 
 </thead>
@@ -131,17 +131,17 @@
       <tr th:each="cadastro : ${cadastros}">
       	<td><a th:href ="${(#mvc.url('EC#detalhesEmpresa').arg(0,cadastro.codigo)).build()}"><i class="material-icons">add</i></a></td>
       	<td><span th:text="${cadastro.nome_empresa}"></span></td>
-      	<td>	<span th:text="${cadastro.razao_empresa}"></span></td>
+      	<td><span th:text="${cadastro.razao_empresa}"></span></td>
 		<td><span th:text="${cadastro.email_empresa}"></span></td>
 		<td><span th:text="${cadastro.telefone}"></span></td>
-		<td>	<span th:text="${cadastro.area_medica}"></span>	</td>
-		<td>	<span th:text="${cadastro.cnpj}"></span></td>
-		<td>	<span th:text="${cadastro.numero_end}"></span></td>
-		<td>	<span th:text="${cadastro.rua_end}"></span>	</td>
+		<td><span th:text="${cadastro.area_medica}"></span>	</td>
+		<td><span th:text="${cadastro.cnpj}"></span></td>
+		<td><span th:text="${cadastro.numero_end}"></span></td>
+		<td><span th:text="${cadastro.rua_end}"></span>	</td>
 		<td><span th:text="${cadastro.bairro_end}"></span></td>
-		<td>	<span th:text="${cadastro.cidade_end}"></span></td>
-		<td>	<span th:text="${cadastro.cep}"></span></td>
-		<td>	<a class="waves-effect waves-teal btn-flat " th:href ="${(#mvc.url('CC#attCompany').arg(0,cadastro.codigo)).build()}"><i class="material-icons">edit</i></a></td>
+		<td><span th:text="${cadastro.cidade_end}"></span></td>
+		<td><span th:text="${cadastro.cep}"></span></td>
+		<td><a class="waves-effect waves-teal btn-flat " th:href ="${(#mvc.url('CC#attCompany').arg(0,cadastro.codigo)).build()}"><i class="material-icons">edit</i></a></td>
 		<!--td>
 		<spring:url value ="/update/${cadastro.codigo}" var="updateURL">
 		<a class="waves-effect waves-teal btn-flat" href="${updateURL}" ><i class="material-icons">edit</i></a>
